@@ -1,0 +1,5 @@
+{
+  "name": "NetworkSim Pro",
+  "description": "Ứng dụng mô phỏng mạng máy tính, tối ưu hóa định tuyến và đánh giá an ninh hệ thống dựa trên lý thuyết đồ thị. Hỗ trợ vẽ đồ thị, thuật toán tìm đường, luồng cực đại, cây khung và phân tích AI.",
+  "requestFramePermissions": []
+}
