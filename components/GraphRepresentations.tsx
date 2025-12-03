@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { GraphData } from '../types';
 
@@ -45,7 +46,7 @@ export const GraphRepresentations: React.FC<Props> = ({ graph, viewMode }) => {
               <table className="table-auto w-full text-center border-collapse">
                 <thead className="bg-zinc-900 sticky top-0 z-10">
                   <tr>
-                    <th className="p-3 border-b border-r border-zinc-800 bg-zinc-900 sticky left-0 z-20 text-zinc-500 font-mono text-xs">Nodes</th>
+                    <th className="p-3 border-b border-r border-zinc-800 bg-zinc-900 sticky left-0 z-20 text-zinc-500 font-mono text-xs">Nút (Nodes)</th>
                     {graph.nodes.map(n => (
                       <th key={n.id} className="p-3 border-b border-zinc-800 text-blue-400 font-bold text-sm min-w-[60px]">
                         {n.label}
@@ -70,7 +71,7 @@ export const GraphRepresentations: React.FC<Props> = ({ graph, viewMode }) => {
               </table>
             </div>
             <div className="mt-4 text-zinc-500 text-xs italic">
-              * Hàng đại diện cho nút nguồn, Cột đại diện cho nút đích. Giá trị là trọng số cạnh.
+              * Hàng đại diện cho Nút Nguồn, Cột đại diện cho Nút Đích. Giá trị trong ô là Trọng số.
             </div>
           </div>
         );

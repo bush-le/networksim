@@ -1,3 +1,4 @@
+
 export interface Node {
   id: string;
   x: number;
@@ -20,17 +21,33 @@ export interface GraphData {
   isDirected: boolean;
 }
 
+export interface AlgorithmStep {
+  visited?: string[];
+  path?: string[];
+  currentNodeId?: string | null; // The node currently being processed
+  currentLinkId?: { source: string, target: string } | null; // The link currently being processed
+  mstLinks?: Link[];
+  traversedEdges?: Link[];
+  flowDetails?: Record<string, number>;
+  bipartiteSets?: { setA: string[], setB: string[] }; // Added for Bipartite Animation
+  log: string; // The specific log for this step
+}
+
 export interface AlgorithmResult {
-  path?: string[]; // Array of Node IDs
-  visited?: string[]; // Array of Node IDs in order
-  mstLinks?: Link[]; // For Prim/Kruskal
-  traversedEdges?: Link[]; // For BFS/DFS visualization
-  maxFlow?: number; // For Ford-Fulkerson
-  flowDetails?: Record<string, number>; // edge key -> flow
+  // Final Results
+  path?: string[]; 
+  visited?: string[]; 
+  mstLinks?: Link[]; 
+  traversedEdges?: Link[]; 
+  maxFlow?: number; 
+  flowDetails?: Record<string, number>; 
   logs: string[];
   isBipartite?: boolean;
   bipartiteSets?: { setA: string[], setB: string[] };
   eulerPath?: string[];
+  
+  // Animation Data
+  steps?: AlgorithmStep[];
 }
 
 export enum AlgorithmType {
@@ -38,6 +55,7 @@ export enum AlgorithmType {
   BFS = 'BFS',
   DFS = 'DFS',
   DIJKSTRA = 'DIJKSTRA',
+  BELLMAN_FORD = 'BELLMAN_FORD',
   PRIM = 'PRIM',
   KRUSKAL = 'KRUSKAL',
   FORD_FULKERSON = 'FORD_FULKERSON',
